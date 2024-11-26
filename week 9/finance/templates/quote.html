@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote Lookup
+{% endblock %}
+
+{% block main %}
+    <h3 class="pb-4">Stock Quote Lookup</h3>
+
+    <div class="mb-3 d-inline-flex">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Stock symbol" type="text" id="symbol">
+    </div>
+
+    <div id="result"></div>
+
+
+    <!-- CS50 SPECIFIC -->
+    <!-- <form action="/quote" method="post">
+        <div class="mb-3 d-inline-flex">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Stock symbol" type="text" id="symbol">
+            <button class="btn btn-primary ms-2" type="submit">Check</button>
+        </div>
+    </form>
+    {% if quote %}
+        <h4>{{ quote["symbol"] }}</h4>
+        <h5>{{ quote["price"] | usd }}</h5>
+    {% endif %} -->
+    <!-- ------------- -->
+
+    
+    <script>
+        let input = document.querySelector('#symbol')
+        input.addEventListener('input', async function() {
+            let response = await fetch('/quote?symbol=' + input.value);;
+            let quote = await response.text();
+            document.querySelector('#result').innerHTML = quote;
+        })
+    </script>
+{% endblock %}

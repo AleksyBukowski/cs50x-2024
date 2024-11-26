@@ -1,0 +1,21 @@
+SELECT language, COUNT(*) AS n FROM favourites GROUP BY language ORDER BY n DESC;
+> the "COUNT(*) AS n" thing creates a synonym for COUNT(*) and calls it n
+
+SELECT * FROM shows WHERE id IN
+(SELECT show_id FROM rating WHERE rating >= 6.0 LIMIT 10);
+> nested query, returns shows from table shows WHERE the id of the shows is in list of show_id's that we get from the second query which is in the parentheses
+
+
+SELECT title FROM shows WHERE id IN
+(SELECT show_id FROM stars WHERE person_id =
+(SELECT id FROM people WHERE name = 'Steve Carell'));
+> uses two nested queries and a many-to-many relation between two tables that have the 3rd helping table between them (perhaps the fastest way of these three ways)
+
+SELECT shows.name FROM shows JOIN stars ON stars.show_id = shows.id JOIN people ON people.id = stars.person_id WHERE people.name = 'Steve Carell';
+> uses the join procedure to link 3 tables together, including the 3rd helping table connecting the two tables which create a many-to-many relationSELE
+
+SELECT title FROM shows, stars, people WHERE shows.id = stars.show_id AND stars.person_id = people.id AND people.name == 'Steve Carell';
+> third way of linkind three tables together
+
+CREATE INDEX name_index ON people (name);
+> creates an index on column name of table people, creating a B-Tree, allowing us to access that specific column way faster while searching

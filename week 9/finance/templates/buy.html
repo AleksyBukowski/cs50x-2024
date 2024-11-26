@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Stocks
+{% endblock %}
+
+{% block main %}
+    <h3 class="pb-4">Buy Stocks</h3>
+    <form action="/buy" method="post">
+        <div class="mb-3 d-inline-flex">
+            <input autocomplete="off" autofocus class="form-control ms-auto w-auto" name="symbol" placeholder="Stock symbol" type="text" id="symbol">
+            <input autocomplete="off" class="form-control mx-auto ms-2 me-0" name="shares" placeholder="Shares" type="number" step=".01" style="width: 16%;" id="shares">
+            <button class="btn btn-primary ms-2 me-auto" type="submit">Buy</button>
+        </div>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        let input1 = document.querySelector('#symbol');
+        let input2 = document.querySelector('#shares');
+
+        async function fetchStockData() {
+            let symbol = input1.value
+            let shares = input2.value
+
+            if (symbol && shares) {
+                let response = await fetch('/buy?symbol=' + symbol + '&shares=' + shares);;
+                let data = await response.text();
+                document.querySelector('#result').innerHTML = data;
+            }
+            else {
+                document.querySelector('#result').innerHTML = '';
+            }
+        }
+
+        input1.addEventListener('input', fetchStockData);
+        input2.addEventListener('input', fetchStockData);
+
+
+    </script>
+
+{% endblock %}

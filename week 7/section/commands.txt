@@ -1,0 +1,6 @@
+sqlite3 databasename.db <-- creates database
+.tables <-- shows tables
+.schema <-- shows the schema (commands used to create tables)
+.quit <-- quits sqlite
+.read filename.sql <-- runs the sql command(s) written inside the file specified
+EXPLAIN QUERY PLAN (query) <-- explains the process behind a query

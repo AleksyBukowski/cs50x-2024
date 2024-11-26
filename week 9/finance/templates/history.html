@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h3 class="pb-4">Transaction History</h3>
+    {% if history %}
+        <div id="table_div">
+            <table class="table table-striped sortable">
+                <thead>
+                    <tr>
+                        <th class="text-start">Date</th>
+                        <th class="text-end">Type</th>
+                        <th class="text-end">Symbol</th>
+                        <th class="text-end">Shares</th>
+                        <th class="text-end">Price per share</th>
+                        <th class="text-end">TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in history %}
+                        <tr>
+                            <td class="text-start">{{ event["date"] }}</td>
+                            <td class="text-end">{{ event["type"] }}</td>
+                            <td class="text-end">{{ event["stock_symbol"] }}</td>
+                            <td class="text-end">{{ event["quantity"] }}</td>
+                            <td class="text-end">{{ event["price_per_share"] | usd }}</td>
+                            <td class="text-end">{{ event["total"] | usd }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <h5 class="text-center fw-semibold">You haven't made any transactions.</h5>
+    {% endif %}
+{% endblock %}

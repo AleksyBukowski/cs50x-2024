@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.onload = function() {
+            let team1 = 0;
+            let team2 = 0;
+            document.querySelector("#b1").onclick = function() {
+                team1 = team1 + 1;
+                if (team1 <= 5 && team2 < 5) {
+                    document.querySelector("#t1").innerHTML = team1;
+                    if (team1 >= 5) {
+                        alert("Team 1 won!");
+                    }
+                }
+
+            }
+
+            document.querySelector("#b2").onclick = function() {
+                team2 = team2 + 1;
+                if (team2 <= 5 && team1 < 5) {
+                    document.querySelector("#t2").innerHTML = team2;
+                    if (team2 >= 5) {
+                        alert("Team 2 won!");
+                    }
+                }
+            }
+
+        }
+    </script>
+    <style>
+        h1, th, td, footer {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        table, tr, th, td {
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        #t1, #t2 {
+            padding: 5px 0px 5px 0px;
+            background-color: lightblue;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scores</title>
+</head>
+<body>
+    <header>
+        <h1>Team scores</h1>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <th>Team 1</th>
+                <th>Team 2</th>
+            </tr>
+            <tr>
+                <td id="t1">0</td>
+                <td id="t2">0</td>
+            </tr>
+            <tr>
+                <td><button id="b1">+1</button></td>
+                <td><button id="b2">+1</button></td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        made by me
+    </footer>
+</body>
+</html>

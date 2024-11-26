@@ -1,0 +1,4 @@
+{% if quote %}
+    <h3 class="stock_symbol fw-semibold pt-4">{{ quote["symbol"] }}</h3>
+    <h4 class="stock_quote">Price: {{ quote["price"] | usd }}</h4>
+{% endif %}

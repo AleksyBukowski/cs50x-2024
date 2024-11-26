@@ -1,0 +1,196 @@
+@font-face {
+    font-family: minecraft;
+    src: url(Minecraft.ttf);
+  }
+
+@font-face {
+    font-family: '04b_30';
+    src: url(04B_30__.TTF);
+  }
+
+@font-face {
+    font-family: retroGaming;
+    src: url('Retro Gaming.ttf');
+  }
+
+@font-face {
+    font-family: karmaFuture;
+    src: url('Karma Future.otf');
+  }
+
+@font-face {
+    font-family: karmaSuture;
+    src: url('Karma Suture.otf');
+  }
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background: rgb(62,8,94);
+    background: linear-gradient(180deg, rgba(62,8,94,1) 28%, rgba(27,0,40,1) 83%);
+    background-size: auto;
+    color: #f9dcc0;
+
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+header {
+    width: 100%;
+
+}
+
+footer {
+    width: 100%;
+    padding-top: 50px;
+}
+
+
+#right {
+    width: 64%;
+
+    /* height: 800px; */
+    /* float: left; */
+}
+
+#left {
+    width: 36%;
+
+    /* height: 800px; */
+    /* float: left; */
+}
+
+
+@media screen and (max-width: 1080px) {
+    main {
+      flex-direction: column;
+    }
+    #right, #left {
+        width: 100%;
+    }
+  }
+
+li, p, a, button, .accordionPurple {
+    font-family: karmaSuture;
+    color: #f9dcc0;
+}
+
+
+h1 {
+    font-family: '04b_30';
+    padding-top: 10px;
+}
+
+h2 {
+    font-family: karmaFuture;
+    padding-top: 20px;
+}
+
+h1, h2, footer {
+    text-align: center;
+    color: #f9bccc;
+}
+
+
+#cats {
+    /* height: 560px; */
+    position: relative;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 1%;
+}
+
+p {
+    text-align: center;
+}
+
+
+hr {
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+#infocat {
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: auto;
+}
+
+li {
+    list-style: url('star.png');
+}
+
+.leftelements {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#info {
+    text-allign: center;
+}
+
+ul {
+    margin-left: 30%;
+    padding-top: 16px;
+}
+
+li:hover {
+    animation: push 0.25s ease-in-out forwards 1;
+}
+
+@keyframes push {
+    0% {
+        padding-left: 0px;
+    }
+    100% {
+        padding-left: 16px;
+    }
+}
+
+a {
+    color: #b979ed;
+}
+
+#cattransparent {
+    position: relative;
+    width: 10%;
+    bottom: 36px;
+    left: 1%;
+}
+
+.externalEmbed {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+}
+
+#spotify {
+    padding-top: 50px;
+    max-width: 750px;
+}
+
+.accordionPurple {
+    background-color: #3e085e;
+}
+
+#accordionOutside {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+}
+
+body {
+    padding-bottom: 120px;
+}

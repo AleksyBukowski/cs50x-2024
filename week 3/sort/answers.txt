@@ -1,0 +1,15 @@
+sort1 uses: bubble sort
+
+How do you know?: it handles the sorted list way faster than sort 3 (selection sort), meaning that it doesn't have to
+go through all of the n^2 steps, if the list is already sorted. It performs similarly to selection sort on the random
+numbers file though, and gets outperformed by sort 2 (merge sort) - therefore, it must be bubble sort.
+
+sort2 uses: merge sort
+
+How do you know?: it completely outperforms both the sort1 and sort3 programs while sorting the biggest, 50000 number list,
+meaning that it must be way faster than O(n^2), so to speak, faster than both selection sort and bubble sort.
+
+sort3 uses: selection sort
+
+How do you know?: it takes about the same time to sort the unsorted, reversed and sorted ones - indicating it goes
+through all of the n^2 steps, no matter what the structure of the unsorted file is, and it is way slower than merge sort.

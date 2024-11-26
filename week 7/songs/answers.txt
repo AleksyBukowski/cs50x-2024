@@ -1,0 +1,6 @@
+The average valence is around 0.48, making it quite low.
+The energy is a little highier, averaging around 0.65, and the danceability is even highier - average of 0.71.
+Judging by the average values, the mood might not seem the happiest, but it is a little energetic and danceable - perhaps something like a moody party.
+It seems like many of those songs are trap or something similar, as that genre sounds a little dull (quite unhappy) but is still danceable.
+
+The way i've calculated the aura might not be very representative of the listener, as it averages all the values - obviously, the top 1 song is way more important than the top 100 song, and we don't take that into consideration here - the values might also not be calculated in the best way, as some songs have long intros and my guess would be that the danceability of songs like these drops quite significantly. The way i'd calculate it better is to use some kind of a weighted average, giving more importance to songs highier in the list and less importance to these which are placed lower.

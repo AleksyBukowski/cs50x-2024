@@ -1,0 +1,14 @@
+<!-- this is the template for dynamic stock price rendering -->
+{% if quote %}
+    {% if exceeds %}
+        <p class="fw-semibold">The amount provided ({{ shares }}) exceeds the amount owned ({{ shares_owned }})</p>
+    {% else %}
+        {% if shares < "1" %}
+            <p>{{ shares }} of a share of {{ quote["symbol"] }} = &dollar;{{ price_total }}</p>
+        {% elif shares == "1" %}
+            <p>{{ shares }} share of {{ quote["symbol"] }} = &dollar;{{ price_total }}</p>
+        {% else %}
+            <p>{{ shares }} shares of {{ quote["symbol"] }} = &dollar;{{ price_total }}</p>
+        {% endif %}
+    {% endif %}
+{% endif %}

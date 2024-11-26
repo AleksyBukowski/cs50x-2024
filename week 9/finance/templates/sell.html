@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stocks
+{% endblock %}
+
+{% block main %}
+    <h3 class="pb-4">Sell Stocks</h3>
+    {% if stocks %}
+        <form action="/sell" method="post">
+            <div class="mb-3 d-inline-flex">
+                <select class="form-select ms-auto w-50" id="symbol" name="symbol" >
+                    {% for stock in stocks %}
+                        <option value="{{ stock['stock_symbol'] }}">{{ stock['stock_symbol'] }}</option>
+                    {% endfor %}
+                </select>
+                <input autocomplete="off" class="form-control mx-auto ms-2 me-0" name="shares" placeholder="Shares" type="number" step=".01" style="width: 21.17%;" id="shares" autofocus>
+                <button class="btn btn-primary ms-2 me-auto" type="submit">Sell</button>
+            </div>
+        </form>
+    {% else %}
+        <h5 class="text-center fw-semibold">You don't own any stocks.</h5>
+    {% endif %}
+
+
+    <div id="result"></div>
+
+    <script>
+        let input1 = document.querySelector('#symbol');
+        let input2 = document.querySelector('#shares');
+
+        async function fetchStockData() {
+            let symbol = input1.value
+            let shares = input2.value
+
+            if (symbol && shares) {
+                let response = await fetch('/sell?symbol=' + symbol + '&shares=' + shares);;
+                let data = await response.text();
+                document.querySelector('#result').innerHTML = data;
+            }
+            else {
+                document.querySelector('#result').innerHTML = '';
+            }
+        }
+
+        input1.addEventListener('input', fetchStockData);
+        input2.addEventListener('input', fetchStockData);
+
+
+    </script>
+
+{% endblock %}

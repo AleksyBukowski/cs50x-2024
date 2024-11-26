@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    <h3 class="pb-4">Settings</h3>
+
+    <p class="d-inline-flex gap-1">
+        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePass" aria-expanded="false" aria-controls="collapsePass">
+          Change password
+        </button>
+        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseName" aria-expanded="false" aria-controls="collapseName">
+            Change username
+        </button>
+    </p>
+    <div class="collapse" id="collapsePass">
+        <div class="card card-body w-25 mx-auto">
+            <form action="/change_password" method="post">
+                <input class="form-control mx-auto mb-3 w-auto" type="password" name="old_password" placeholder="Old password">
+                <input class="form-control mx-auto my-1 w-auto" type="password" name="new_password" placeholder="New password">
+                <input class="form-control mx-auto my-1 w-auto" type="password" name="new_password_retype" placeholder="Re-type new password">
+                <button class="btn btn-warning mt-1" style="width: 50%" type="submit">Change</button>
+            </form>
+        </div>
+    </div>
+    <div class="collapse" id="collapseName">
+        <div class="card card-body w-25 mx-auto">
+            <form action="/change_username" method="post">
+                <input class="form-control mx-auto mb-3 w-auto" type="text" name="new_username" placeholder="New username" id="new_username">
+                <div id="result"></div>
+                <input class="form-control mx-auto my-1 w-auto" type="password" name="password" placeholder="Password">
+                <button class="btn btn-warning mt-1" style="width: 50%" type="submit">Change</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script>
+        document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-bs-target');
+
+                document.querySelectorAll('.collapse').forEach(collapse => {
+                    if (collapse.id != targetId && collapse.classList.contains('show')) {
+                        const collapseInstance = bootstrap.Collapse.getInstance(collapse);
+                        if (collapseInstance) {
+                            collapseInstance.hide();
+                        }
+                    }
+                });
+            });
+        });
+
+        let input = document.querySelector('#new_username')
+        input.addEventListener('input', async function() {
+            let response = await fetch('/change_username?u=' + input.value);
+            let r = await response.text();
+            document.querySelector('#result').innerHTML = r;
+        })
+    </script>
+{% endblock %}

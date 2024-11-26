@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><h1>Homepage</h1></a>
+        </header>
+    <hr>
+        <main>
+            <div id="left">
+                <h2>My running journey:</h2>
+                <p id="info" class="leftelements">I always hated running. Aaaalways. In primary school, my 60m sprint time was quite good - but besides that, I hated running with passion.<br>One day my uncle told me that I'd be a good runner since i cycle so much - at first, I didn't think so, but i remembered these words. A few months later, I started running - I had to push myself through the first 2 weeks because of how bad the experience was - I could barely run 500 meters without stopping! After doing that, I actually started to like running and it became my second favourite hobby after cycling - thanks uncle!</p>
+                <h2 style="padding-top: 20px;">My top 3 runs:</h2>
+                <!-- BOOTSTRAP LIST -->
+                <div id="accordionOutside">
+                  <div class="accordion accordionPurple" id="accordionExample">
+                      <div class="accordion-item accordionPurple">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed accordionPurple" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            The 27KM no breaks run
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse accordionPurple" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accordionPurple">
+                            <a href="https://www.strava.com/activities/11650165850" target="_blank"><strong>This</strong></a> is my longest run for now. The pace isn't anything special, but im proud that that i managed to finish it just after a year of running - taking almost no breaks, too! (just 4 minutes out of 3 hours...)
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item accordionPurple">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed accordionPurple" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            The hometown race
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse accordionPurple" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accordionPurple">
+                            <a href="https://www.strava.com/activities/11438617132" target="_blank"><strong>This</strong></a> was my first ever race after taking interst in running - I ran this race 2 years before too, and my time went from 33 mins to just 23 in a year of training!
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item accordionPurple">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed accordionPurple" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            The 1st "long run"
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse accordionPurple" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accordionPurple">
+                            <a href="https://www.strava.com/activities/9524633008" target="_blank"><strong>This</strong></a> one was awful when doing it, but it remains a great memory afterwards - my leg hurt insanely, but I ran with a friend, so we had a lot of fun anyways!
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div id="right">
+                <h2 style="margin-bottom: 0;">My biggest run - the Chodzież - Piła 27KM</h2>
+                <div class="externalEmbed">
+                    <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="11650165850" data-style="standard"></div>
+                    <script src="https://strava-embeds.com/embed.js"></script>
+                </div>
+                <p style="padding-top: 5px; font-size: 80%;">Statistics and photos of the run</p>
+            </div>
+        </main>
+        <footer class="navbar fixed-bottom">
+            <img src="cat-transparent.png" alt="Cat pixelart" id="cattransparent">
+            <p class="navbar fixed-bottom" style="padding-left: 10px; padding-top: 10px;">Me &#169 All rights reserved</p>
+        </footer>
+    </body>
+</html>

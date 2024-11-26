@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><h1>Homepage</h1></a>
+        </header>
+    <hr>
+        <main>
+            <div id="left">
+                <h2>My cycling journey:</h2>
+                <p id="info" class="leftelements">I started cycling a lot around 2019 due to stress - I found cycling to be a great way to relieve it. At first, I couldn't cycle up a little hill near my hometown - I nearly had a heart attack once!<br>After a while, I found out that i actually love cycling - once I've done my first 100KM ride, there was no going back anymore. 4 years later I managed to ride all the way from my small hometown to the capital of Poland - Warsaw, and it took me around 18 hours and 350 kilometers!<br>I'm definately not planning to stop anytime soon.</p>
+                <h2 style="padding-top: 20px;">My top 3 trips:</h2>
+                <!-- BOOTSTRAP LIST -->
+                <div id="accordionOutside">
+                  <div class="accordion accordionPurple" id="accordionExample">
+                      <div class="accordion-item accordionPurple">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed accordionPurple" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            The 350KM Warsaw ride
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse accordionPurple" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accordionPurple">
+                            <a href="https://www.strava.com/activities/9709310913/overview" target="_blank"><strong>This</strong></a> is by far my longest ride, although I'm planning to go even further soon!
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item accordionPurple">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed accordionPurple" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            The 210KM Baltic sea ride
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse accordionPurple" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accordionPurple">
+                            <a href="https://www.strava.com/activities/5279796059" target="_blank"><strong>This</strong></a> ride was an extraordinary achievement of mine - I could finally tell everyone that I've been to the Baltic sea by bike!
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item accordionPurple">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed accordionPurple" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            The tri-city winter ride
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse accordionPurple" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accordionPurple">
+                            <a href="https://www.strava.com/activities/10590212889" target="_blank"><strong>This</strong></a> ride, although a lot shorter, was definately one of my favourite ones. People called me crazy for cycling in the middle of winter, but I even followed up the next day with <a href="https://www.strava.com/activities/10597624284" target="_blank"><strong>that</strong></a> ride! Beautiful polish sea and big cities at night - one of my favourite things ever.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div id="right">
+                <h2 style="margin-bottom: 0;">My biggest ride for now - the Chodzież - Warsaw 350KM</h2>
+                <div class="externalEmbed">
+                    <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="9709310913" data-style="standard"></div>
+                    <script src="https://strava-embeds.com/embed.js"></script>
+                </div>
+                <p style="padding-top: 5px; font-size: 80%;">Statistics and photos of the ride</p>
+            </div>
+        </main>
+        <footer class="navbar fixed-bottom">
+            <img src="cat-transparent.png" alt="Cat pixelart" id="cattransparent">
+            <p class="navbar fixed-bottom" style="padding-left: 10px; padding-top: 10px;">Me &#169 All rights reserved</p>
+        </footer>
+    </body>
+</html>

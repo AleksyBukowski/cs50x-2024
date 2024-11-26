@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h5 class="mt-0 pt-0 mb-1">Welcome, {{ username }}!</h5>
+    <h3 class="pb-4">Portfolio</h3>
+
+    {% if user_holdings %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for holding in user_holdings %}
+                <tr>
+                    <td class="text-start">{{ holding["stock_symbol"] }}</td>
+                    <td class="text-end">{{ holding["quantity"]|round(2) }}</td>
+                    <td class="text-end">{{ holding["current_price"] | usd }}</td>
+                    <td class="text-end">{{ holding["total"] | usd }}</td>
+                    <td class="text-end ms-0 ps-0" style="width:10%">
+                        <form action="/quicksell" method="post" id="{{ holding['stock_symbol'] }}">
+                            <input name="symbol" type="hidden" value="{{ holding['stock_symbol'] }}">
+                            <button type="button" class="btn btn-secondary quicksell_btn">QuickSell</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
+                    <td class="border-0 text-end">{{ cash | usd }}</td>
+                </tr>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
+                    <td class="border-0 w-bold text-end">{{ total | usd }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    {% else %}
+        <h5 class="text-center fw-semibold">You don't own any stocks.</h5>
+        <p><b>Balance:</b> {{ cash | usd}}</p>
+    {% endif %}
+    <script>
+        function handleQuickSell(event) {
+            event.preventDefault(); // Prevent the default form submission
+            if (confirm('Are you sure you want to quick sell this stock?')) {
+                // Submit the form if the user confirms
+                event.target.closest('form').submit();
+            }
+        }
+
+        // Attach the event listener to all quick sell buttons
+        document.querySelectorAll('.quicksell_btn').forEach(button => {
+            button.addEventListener('click', handleQuickSell);
+        });
+    </script>
+{% endblock %}

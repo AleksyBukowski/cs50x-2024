@@ -1,0 +1,5 @@
+connects to url, shows info inside of the "envelope" of the servers response (e.g.: content-type: text/html, status code of 200)
+curl -I https://www.harvard.edu/
+
+turns on a web server
+http-server

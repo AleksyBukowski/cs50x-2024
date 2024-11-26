@@ -1,0 +1,274 @@
+@font-face {
+    font-family: bitmgothic;
+    src: url("Bitmgothic.ttf");
+  }
+
+@font-face {
+    font-family: digitag;
+    src: url("Digitag.ttf");
+  }
+
+@font-face {
+    font-family: joystix;
+    src: url("joystix monospace.otf");
+  }
+
+@font-face {
+    font-family: blox;
+    src: url("Blox2.ttf");
+  }
+
+@font-face {
+    font-family: exepixel;
+    src: url("EXEPixelPerfect.ttf");
+  }
+
+@font-face {
+    font-family: assys;
+    src: url("assys.ttf");
+  }
+
+@font-face {
+    font-family: thirteen;
+    src: url("3D-Thirteen-Pixel-Fonts.ttf");
+  }
+
+@font-face {
+    font-family: papercut;
+    src: url("papercut.ttf");
+  }
+
+@font-face {
+    font-family: Ponari;
+    src: url("Ponari.ttf");
+  }
+
+/* BOOTSTRAP MIGRATION FIXES */
+
+
+/* ------------------------- */
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Courier Prime', monospace;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures full height for sticky footer */
+}
+.navbar {
+    background-color: #4b0082; /* Deep purple */
+}
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+    font-family: exepixel;
+    font-size: 175%;
+    padding: 0;
+}
+
+#ideasea {
+    font-family: Ponari;
+    font-size: 200%;
+}
+.post {
+    display: block; /* Allows the anchor to behave like a block */
+    background-color: #ffffff;
+    border: 2px solid #4b0082;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none; /* Removes underline from the link */
+    color: inherit; /* Inherit text color */
+
+}
+
+.post h5 {
+    color: #4b0082;
+    font-family: exepixel;
+    font-size: 200%;
+    font-weight: bold;
+}
+.post p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.footer {
+    text-align: center;
+    background-color: #4b0082;
+    color: #ffffff;
+    margin-top: auto; /* Push footer to the bottom */
+    width: 100%;
+    font-family: exepixel;
+    font-size: 175%;
+}
+.post:hover {
+    text-decoration: none;
+}
+.post:hover h5 {
+    text-decoration: underline;
+}
+.post:hover p {
+    color: #4b0082;
+}
+
+.btn-primary, .btn-primary:disabled {
+    background-color: purple;
+}
+
+
+.btn-primary:hover {
+    background-color: deeppink;
+}
+
+.btn-secondary, .btn-secondary:disabled {
+    background-color: darkslateblue;
+}
+
+
+/* about */
+.sticky-note-container {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: center; /* Center the notes */
+    flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
+    padding: 20px;
+}
+
+.sticky-note {
+    background-color: #e9e1c8; /* Light yellow to mimic a sticky note */
+    color: #333; /* Dark text color for readability */
+    padding: 20px;
+    flex: 1 1 250px; /* This line was changed for responsiveness */
+    max-width: 300px; /* Max width for larger screens */
+    border-radius: 10px; /* Slight rounding for sticky note effect */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
+    transform: rotate(-2deg); /* Slight rotation for a casual, pinned look */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Handwritten font for fun style */
+    text-align: center;
+    position: relative;
+    margin: 10px; /* Spacing between notes */
+}
+
+.sticky-note::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: -1;
+}
+
+#post_btn {
+    background-color: purple;
+    width: 33%;
+    color: white;
+    text-align: center;
+    font-family: joystix;
+    /* font-family: exepixel;
+    font-size: 18pt; */
+}
+
+#shareyourideas {
+    font-family: joystix;
+    font-size: 200%;
+    padding: 0;
+}
+
+/* create post */
+
+.create-container {
+    width: 100%;
+    max-width: 750px; /* Maximum width for the form */
+    text-align: center; /* Center text */
+}
+
+/* login */
+
+.logreg-container {
+    width: 100%;
+    max-width: 400px; /* Maximum width for the login form */
+    text-align: center; /* Center text */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for form */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.full-height-container {
+    flex: 1; /* Takes up remaining vertical space */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically and horizontally centers the form */
+}
+
+/* post-detailed */
+
+.post-detailed {
+    background-color: #fdfbf4; /* Light off-white color for old paper */
+    color: #333; /* Dark text for readability */
+    font-family: "Georgia", serif; /* Classic font for vintage feel */
+    font-size: 18px; /* Font size for readability */
+    line-height: 1.6; /* Adjust line height for spacing */
+    padding: 20px; /* Add padding around text */
+    padding-top: 30px; /* Increased padding-top to add an extra line */
+    padding-bottom: 20px; /* Standard padding-bottom */
+    margin: 20px auto; /* Center the post and add spacing */
+    width: 90%; /* Responsive width */
+    max-width: 800px; /* Maximum width for readability */
+    border: 1px solid #d4c5a0; /* Light beige border */
+    border-radius: 8px; /* Slight rounding for natural look */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; /* Align text to the left */
+
+    /* Lined paper effect */
+    background-image: linear-gradient(transparent 88%, rgba(0, 0, 0, 0.05) 12%);
+    background-size: 100% calc(1.6em); /* Match the line height */
+}
+
+/* veri kool dropdown when logged in */
+/* Style the dropdown link and ensure space for the arrow */
+.nav-item.dropdown .nav-link {
+    position: relative;
+    padding-right: 1.5rem; /* Space for the custom arrow */
+    color: white; /* Make the text color white */
+}
+
+/* Customize the default dropdown arrow */
+.nav-item.dropdown .dropdown-toggle::after {
+    content: "";
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid white; /* Arrow is white */
+    transition: transform 0.3s ease, border-top-color 0.3s ease;
+}
+
+/* Rotate the arrow smoothly when the dropdown is open */
+.nav-item.dropdown.show .dropdown-toggle::after {
+    transform: translateY(-50%) rotate(180deg); /* Rotate 180 degrees */
+    border-top-color: white; /* Arrow color remains white after rotation */
+}
+
+/* Style the dropdown menu */
+.dropdown-menu {
+    background-color: purple; /* Purple background for the dropdown */
+    border-radius: 5px; /* Rounded corners for the dropdown */
+}
+
+/* Style the dropdown items */
+.dropdown-item {
+    color: white !important; /* White text for dropdown items */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: darkviolet; /* Darker shade of purple on hover */
+}
